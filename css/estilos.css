@@ -148,5 +148,136 @@ footer {
     color: #17324d;
 }
 
+/* ==================================
+   PANTALLA RECUPERAR CONTRASEÑA
+================================== */
+
+.formulario {
+    width: 90%;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario h2 {
+    text-align: center;
+    color: #17324d;
+    margin-bottom: 20px;
+}
+
+.formulario p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario label {
+    font-weight: bold;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.formulario input:focus {
+    outline: 2px solid #7898b5;
+}
+
+.formulario button {
+    padding: 12px;
+    background-color: #17324d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #285477;
+}
+
+.formulario a {
+    color: #17324d;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.formulario a:hover {
+    color: #b8860b;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+    .formulario {
+        width: 92%;
+        padding: 20px;
+    }
+}
+
+
+/* ==================================
+   PÁGINA DE MANTENIMIENTO
+================================== */
+
+.mantenimiento {
+    width: 90%;
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 40px 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.icono-mantenimiento {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.mantenimiento h2 {
+    color: #17324d;
+    margin-bottom: 20px;
+}
+
+.mantenimiento p {
+    margin-bottom: 15px;
+}
+
+.boton-inicio {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background-color: #17324d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.boton-inicio:hover {
+    background-color: #285477;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+    .mantenimiento {
+        padding: 25px 15px;
+    }
+}
+
+
 }
 
