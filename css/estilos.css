@@ -1,4 +1,4 @@
-```css
+
 /* Estilos generales */
 * {
     box-sizing: border-box;
@@ -101,5 +101,52 @@ footer {
         width: 100%;
         max-width: 350px;
     }
+
+/* Formulario de inicio de sesión */
+.formulario {
+    width: 90%;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
-```
+
+.formulario h2 {
+    text-align: center;
+    color: #17324d;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario input {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.formulario button {
+    padding: 12px;
+    background-color: #17324d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #285477;
+}
+
+.formulario a {
+    color: #17324d;
+}
+
+}
+
