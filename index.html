@@ -32,32 +32,25 @@
         <!-- Catálogo de camisas -->
         <section id="catalogo">
             <h2>Nuestro catálogo</h2>
+            <input
+    type="text"
+    id="buscador"
+    placeholder="Buscar una camisa..."
+>
 
-            <div class="catalogo">
+            <div class="catalogo" id="listaCamisas">
 
-                <article class="producto">
-                    <img src="img/camisa1.jpg" alt="Camisa casual">
-                    <h3>Camisa casual</h3>
-                    <p>Ideal para todos los días.</p>
-                    <p class="precio">$45.000</p>
-                </article>
+</div>
+        <section id="carrito">
+    <h2>Mi carrito de compras</h2>
 
-                <article class="producto">
-                    <img src="img/camisa2.jpg" alt="Camisa elegante">
-                    <h3>Camisa elegante</h3>
-                    <p>Perfecta para ocasiones especiales.</p>
-                    <p class="precio">$60.000</p>
-                </article>
+    <p>Productos agregados: <span id="cantidadCarrito">0</span></p>
 
-                <article class="producto">
-                    <img src="img/camisa3.jpg" alt="Camisa urbana">
-                    <h3>Camisa urbana</h3>
-                    <p>Un estilo moderno y cómodo.</p>
-                    <p class="precio">$50.000</p>
-                </article>
+    <ul id="listaCarrito"></ul>
+    <button id="vaciarCarrito">Vaciar carrito</button>
 
-            </div>
-        </section>
+    <h3>Total: $<span id="totalCarrito">0</span></h3>
+</section>
     </main>
 
     <!-- Pie de página -->
@@ -66,7 +59,7 @@
         <p>Contacto: luzmindaromero.96@gmail.com</p>
         <p>MARY LUZMINDA ROMERO LEGUIZAMON FICHA: 3186695</p>
     </footer>
-
+<script src="js/script.js"></script>
 </body>
 </html>
 
