@@ -1,5 +1,4 @@
-// Variables de HILO URBANO
-
+//variables de HILO URBANO
 const nombreTienda = "HILO URBANO";
 
 let nombreCamisa = "Camisa clásica";
@@ -27,6 +26,7 @@ console.log("Precio:", precio);
 console.log("¿Está disponible?", disponible);
 console.log("Cantidad:", cantidad);
 console.log("Total de la compra:", total);
+// Variables de HILO URBANO
 
 // Condicionales if y else
 
@@ -62,52 +62,89 @@ console.log("Catálogo de HILO URBANO:");
 camisas.forEach(function(camisa) {
     console.log(camisa);
 });
-// Productos de HILO URBANO
+// Productos obtenidos desde la API de HILO URBANO
 
-const productos = [
-    {
-        nombre: "Camisa casual",
-        descripcion: "Ideal para todos los días.",
-        precio: 45000,
-        imagen: "img/camisa1.jpg"
-    },
-    {
-        nombre: "Camisa elegante",
-        descripcion: "Perfecta para ocasiones especiales.",
-        precio: 60000,
-        imagen: "img/camisa2.jpg"
-    },
-    {
-        nombre: "Camisa urbana",
-        descripcion: "Un estilo moderno y cómodo.",
-        precio: 50000,
-        imagen: "img/camisa3.jpg"
-    }
-];
+let productos = [];
+
+
+const API_CAMISAS = "http://localhost:8080/api/camisas";
 
 // Seleccionar el espacio del catálogo
 const listaCamisas = document.querySelector("#listaCamisas");
 
+// Consultar las camisas registradas en MySQL
+async function cargarCamisas() {
+
+    try {
+
+        const respuesta = await fetch(API_CAMISAS);
+
+        if (!respuesta.ok) {
+            throw new Error("No se pudieron consultar las camisas");
+        }
+
+        const datos = await respuesta.json();
+
+        productos = datos.map(function(camisa) {
+
+            return {
+                id: camisa.idCamisa,
+                nombre: camisa.nombre,
+                descripcion: camisa.categoria.descripcion,
+                precio: Number(camisa.precio),
+                stock: camisa.stock,
+                talla: camisa.talla,
+                color: camisa.color,
+                imagen: "img/camisa" + camisa.idCamisa + ".jpg"
+            };
+
+        });
+
+        mostrarProductos(productos);
+
+    } catch (error) {
+
+        console.error("Error al cargar las camisas:", error);
+
+        listaCamisas.innerHTML =
+            "<p>No fue posible cargar el catálogo.</p>";
+
+    }
+
+}
 
 // Mostrar los productos en la página
-productos.forEach(function(producto) {
+function mostrarProductos(lista) {
 
-    listaCamisas.innerHTML += `
-        <article class="producto">
-            <img src="${producto.imagen}" alt="${producto.nombre}">
-            <h3>${producto.nombre}</h3>
-            <p>${producto.descripcion}</p>
-            <p class="precio">$${producto.precio.toLocaleString("es-CO")}</p>
+    listaCamisas.innerHTML = "";
 
-            <button class="agregar-carrito" data-nombre="${producto.nombre}">
-                Agregar al carrito
-            </button>
-        </article>
-    `;
+    lista.forEach(function(producto) {
 
-});
+        listaCamisas.innerHTML += `
+            <article class="producto">
+                <img src="${producto.imagen}" alt="${producto.nombre}">
+                <h3>${producto.nombre}</h3>
+                <p>${producto.descripcion}</p>
+                <p>Talla: ${producto.talla}</p>
+                <p>Color: ${producto.color}</p>
+                <p>Disponibles: ${producto.stock}</p>
+                <p class="precio">
+                    $${producto.precio.toLocaleString("es-CO")}
+                </p>
 
-// Buscador de camisas
+                <button class="agregar-carrito"
+                    data-nombre="${producto.nombre}">
+                    Agregar al carrito
+                </button>
+            </article>
+        `;
+
+    });
+
+}
+
+// Cargar las camisas desde Spring Boot
+cargarCamisas();
 
 
 // Buscador de camisas
