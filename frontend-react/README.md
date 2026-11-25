@@ -1,16 +1,35 @@
-# React + Vite
+# HILO URBANO - Frontend React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
+Frontend de una tienda virtual de camisas desarrollado con React JS.
 
-Currently, two official plugins are available:
+## Tecnologías utilizadas
+- React JS
+- JavaScript
+- JSX
+- CSS
+- Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Componentes principales
+- Encabezado.jsx: muestra el encabezado y la navegación.
+- Catalogo.jsx: consulta y presenta los productos de la API.
+- Camisa.jsx: muestra la información de cada camisa.
+- Carrito.jsx: administra la visualización del carrito de compras.
+- App.jsx: organiza los componentes principales.
 
-## React Compiler
+## Consumo de API REST
+Se utiliza fetch y useEffect para consultar los productos mediante una petición GET.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Dirección local:
+http://localhost:8080/api/camisas
 
-## Expanding the ESLint configuration
+## Funcionalidades
+- Visualización del catálogo de camisas.
+- Presentación de imágenes y precios.
+- Agregar productos al carrito.
+- Eliminar productos del carrito.
+- Calcular el total de la compra.
+- Diseño adaptable a diferentes pantallas.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Proyecto
+HILO URBANO - Tienda virtual de camisas.
